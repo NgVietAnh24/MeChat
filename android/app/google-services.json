@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "445383620503",
+    "firebase_url": "https://mechat-d7595-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mechat-d7595",
+    "storage_bucket": "mechat-d7595.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445383620503:android:e3d1294e6f723e9a5836d2",
+        "android_client_info": {
+          "package_name": "vn.vanh.message.mechat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-_rKWjz7Hw0eitg9BEFdiqSHqhd4_0gE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
