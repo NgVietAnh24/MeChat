@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:mechat/Config/Themes.dart';
 import 'package:mechat/Pages/SplacePage/SplacePage.dart';
+import 'package:mechat/Pages/Welcome/WelcomePage.dart';
 import 'firebase_options.dart';
 import './screens/login.dart'; // Import màn hình đăng nhập
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: const SplacePage(),
+      home: const WelcomePage(),
     );
   }
 }

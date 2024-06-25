@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: <Widget>[
             // Hiển thị hình ảnh cục bộ
             const Image(
-              image: AssetImage('assets/logo_app.png'),
+              image: AssetImage('assets/Icons/logo_app.png'),
               height: 100,
               width: 100,
             ),
