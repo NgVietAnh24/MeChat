@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mechat/Config/String.dart';
-import 'package:mechat/Config/imges.dart';
+import 'package:mechat/Pages/Welcome/Widgets/WelcomeBody.dart';
 import 'package:mechat/Pages/Welcome/Widgets/WelcomeHeadling.dart';
+import 'package:slide_to_act/slide_to_act.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -22,20 +21,14 @@ class WelcomePage extends StatelessWidget {
               SizedBox(
                 height: 60,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(AssetsImage.boyPic),
-                  SvgPicture.asset(AssetsImage.connectSVG),
-                  Image.asset(AssetsImage.girlPic),
-                ],
-              ),
+              WelcomeBody(),
               SizedBox(
-                height: 40,
+                height: 60,
               ),
-              Text(
-                WelcomePageString.nowYourAre,
-                style: Theme.of(context).textTheme.headlineMedium,
+              SlideAction(
+                onSubmit: () {},
+                innerColor: Theme.of(context).colorScheme.primary,
+                outerColor: Theme.of(context).colorScheme.primaryContainer,
               ),
             ],
           ),
