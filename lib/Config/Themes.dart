@@ -9,8 +9,9 @@ var darkTheme = ThemeData(
     primary: dPrimaryColor,
     onPrimary: dOnBackgroundColor,
     background: dBackgroundColor,
-    onBackground: dContainerColor,
-    primaryContainer: dOnContainerColor,
+    onBackground: dOnContainerColor,
+    primaryContainer: dContainerColor,
+    onPrimaryContainer: dOnContainerColor,
   ),
   textTheme: const TextTheme(
     headlineLarge: TextStyle(
