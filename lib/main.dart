@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:mechat/Config/PagePath.dart';
 import 'package:mechat/Config/Themes.dart';
+import 'package:mechat/Pages/Auth/AuthPage.dart';
 import 'package:mechat/Pages/SplacePage/SplacePage.dart';
 import 'package:mechat/Pages/Welcome/WelcomePage.dart';
 import 'firebase_options.dart';
-import './screens/login.dart'; // Import màn hình đăng nhập
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +22,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Me Chat',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
+      getPages: pagePath,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
       home: const WelcomePage(),
