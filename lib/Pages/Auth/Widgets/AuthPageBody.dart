@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechat/Pages/Auth/Widgets/LoginForm.dart';
+import 'package:mechat/Pages/Auth/Widgets/SignupForm.dart';
 
 class AuthPageBody extends StatelessWidget {
   const AuthPageBody({super.key});
@@ -9,8 +10,8 @@ class AuthPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     RxBool isLogin = false.obs;
     return Container(
-      padding: EdgeInsets.all(20),
-      height: 400,
+      padding: const EdgeInsets.all(20),
+      // height: 400,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Theme.of(context).colorScheme.primaryContainer,
@@ -38,7 +39,7 @@ class AuthPageBody extends StatelessWidget {
                                     ? Theme.of(context).textTheme.bodyLarge
                                     : Theme.of(context).textTheme.labelLarge,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               AnimatedContainer(
@@ -68,11 +69,11 @@ class AuthPageBody extends StatelessWidget {
                                     ? Theme.of(context).textTheme.labelLarge
                                     : Theme.of(context).textTheme.bodyLarge,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
+                                duration: const Duration(milliseconds: 200),
                                 width: isLogin.value ? 0 : 100,
                                 height: 3,
                                 decoration: BoxDecoration(
@@ -87,7 +88,8 @@ class AuthPageBody extends StatelessWidget {
                     ],
                   ),
                 ),
-                LoginForm(),
+                Obx(() =>
+                    isLogin.value ? const LoginForm() : const SignupForm()),
               ],
             ),
           ),

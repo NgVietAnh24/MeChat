@@ -11,18 +11,20 @@ class AuthPage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  WelcomeHeadling(),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  AuthPageBody(),
-                ],
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Column(
+                  children: [
+                    WelcomeHeadling(),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    AuthPageBody(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
