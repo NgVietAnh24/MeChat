@@ -4,7 +4,7 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mechat/Config/PagePath.dart';
 import 'package:mechat/Config/Themes.dart';
 import 'package:mechat/Pages/Auth/AuthPage.dart';
-import 'package:mechat/Pages/HomePage/HomePage.dart';
+import 'package:mechat/Pages/Home/HomePage.dart';
 import 'package:mechat/Pages/SplacePage/SplacePage.dart';
 import 'package:mechat/Pages/Welcome/WelcomePage.dart';
 import 'firebase_options.dart';

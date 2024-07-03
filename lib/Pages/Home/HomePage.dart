@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mechat/Config/String.dart';
 import 'package:mechat/Config/imges.dart';
-import 'package:mechat/Pages/HomePage/Widgets/ChatsList.dart';
-import 'package:mechat/Pages/HomePage/Widgets/TableBar.dart';
+import 'package:mechat/Pages/Home/Widgets/ChatsList.dart';
+import 'package:mechat/Pages/Home/Widgets/TableBar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
