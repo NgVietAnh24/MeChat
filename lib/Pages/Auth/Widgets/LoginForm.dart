@@ -8,9 +8,9 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController authController = Get.put(AuthController());
     TextEditingController email = TextEditingController();
     TextEditingController password = TextEditingController();
-    AuthController authController = Get.put(AuthController());
     return Column(
       children: [
         const SizedBox(
@@ -26,6 +26,7 @@ class LoginForm extends StatelessWidget {
           height: 30,
         ),
         TextField(
+          controller: password,
           decoration: InputDecoration(
               hintText: "Password", prefixIcon: Icon(Icons.password_outlined)),
         ),
