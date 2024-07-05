@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:mechat/Config/String.dart';
 import 'package:mechat/Config/imges.dart';
 import 'package:mechat/Pages/Home/Widgets/ChatsList.dart';
@@ -37,7 +38,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/profilePage");
+            },
             icon: Icon(
               Icons.more_vert,
             ),
