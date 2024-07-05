@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   final auth = FirebaseAuth.instance;
+  final db = FirebaseFirestore.instance;
   RxBool isLoading = false.obs;
   // For login
 
@@ -44,5 +46,10 @@ class AuthController extends GetxController {
       print(e);
     }
     isLoading.value = false;
+  }
+
+  Future<void> logoutUser() async {
+    await auth.signOut();
+    Get.offAllNamed("/authPage");
   }
 }
