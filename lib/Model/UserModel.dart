@@ -1,3 +1,4 @@
+
 class UserModel {
   String? id;
   String? name;
@@ -5,24 +6,23 @@ class UserModel {
   String? profileImage;
   String? phoneNumber;
 
-  UserModel(
-      {this.id, this.name, this.email, this.profileImage, this.phoneNumber});
+  UserModel({this.id, this.name, this.email, this.profileImage, this.phoneNumber});
 
   UserModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    profileImage = json['profileImage'];
-    phoneNumber = json['phoneNumber'];
+    id = json["id"];
+    name = json["name"];
+    email = json["email"];
+    profileImage = json["profileImage"];
+    phoneNumber = json["phoneNumber"];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['profileImage'] = this.profileImage;
-    data['phoneNumber'] = this.phoneNumber;
-    return data;
+    final Map<String, dynamic> _data = <String, dynamic>{};
+    _data["id"] = id;
+    _data["name"] = name;
+    _data["email"] = email;
+    _data["profileImage"] = profileImage;
+    _data["phoneNumber"] = phoneNumber;
+    return _data;
   }
 }

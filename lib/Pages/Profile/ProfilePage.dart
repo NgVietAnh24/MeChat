@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechat/Controller/AuthController.dart';
+import 'package:mechat/Controller/ProfileController.dart';
 import 'package:mechat/Pages/Profile/Widgets/UserInfo.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -9,6 +10,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthController authController = Get.put(AuthController());
+    ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),

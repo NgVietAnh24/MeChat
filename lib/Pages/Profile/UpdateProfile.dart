@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mechat/Controller/ProfileController.dart';
 import 'package:mechat/Widget/PrimatyButton.dart';
 
 class UpdateProfile extends StatelessWidget {
@@ -6,6 +8,7 @@ class UpdateProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Update profile"),

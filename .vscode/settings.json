@@ -1,0 +1,9 @@
+{
+    "typescript.tsserver.watchOptions": {
+        
+        "guides.normal.color.dark": "#404040", // Màu của các đường dọc khi dùng theme tối
+  "guides.normal.color.light": "#d0d0d0", // Màu của các đường dọc khi dùng theme sáng
+  "guides.normal.style": "solid", // Kiểu đường dọc (solid/dashed/dotted)
+  "guides.extraGuides": [80, 100] // Các vị trí thêm đường dọc
+    }
+}

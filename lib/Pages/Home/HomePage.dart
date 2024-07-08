@@ -6,6 +6,8 @@ import 'package:mechat/Config/imges.dart';
 import 'package:mechat/Pages/Home/Widgets/ChatsList.dart';
 import 'package:mechat/Pages/Home/Widgets/TableBar.dart';
 
+import '../../Controller/ProfileController.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -17,6 +19,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 3, vsync: this);
+    ProfileController profileController = Get.put(ProfileController());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,

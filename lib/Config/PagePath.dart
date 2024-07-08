@@ -3,7 +3,7 @@ import 'package:mechat/Pages/Auth/AuthPage.dart';
 import 'package:mechat/Pages/Chat/ChatPage.dart';
 import 'package:mechat/Pages/Home/HomePage.dart';
 import 'package:mechat/Pages/Profile/ProfilePage.dart';
-import 'package:mechat/Pages/Profile/Widgets/UpdateProfile.dart';
+import 'package:mechat/Pages/Profile/UpdateProfile.dart';
 
 var pagePath = [
   GetPage(
