@@ -5,6 +5,7 @@ import 'package:mechat/Config/String.dart';
 import 'package:mechat/Config/imges.dart';
 import 'package:mechat/Pages/Home/Widgets/ChatsList.dart';
 import 'package:mechat/Pages/Home/Widgets/TableBar.dart';
+import 'package:mechat/Pages/ProfilePage/ProfilePage.dart';
 
 import '../../Controller/ProfileController.dart';
 
@@ -42,7 +43,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
           IconButton(
             onPressed: () {
-              Get.toNamed("/profilePage");
+              // Get.toNamed("/profilePage");
+              Get.to(ProfilePage());
             },
             icon: Icon(
               Icons.more_vert,

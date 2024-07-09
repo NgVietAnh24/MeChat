@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:mechat/Controller/ProfileController.dart';
 import 'package:mechat/Widget/PrimatyButton.dart';
 
-class UpdateProfile extends StatelessWidget {
-  const UpdateProfile({super.key});
+class UserUpdateProfile extends StatelessWidget {
+  const UserUpdateProfile({super.key});
 
   @override
   Widget build(BuildContext context) {

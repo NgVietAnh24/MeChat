@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechat/Controller/AuthController.dart';
 import 'package:mechat/Controller/ProfileController.dart';
-import 'package:mechat/Pages/Profile/Widgets/UserInfo.dart';
+import 'package:mechat/Pages/UserProfile/Widgets/UserInfo.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

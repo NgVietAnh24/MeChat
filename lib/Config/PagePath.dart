@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 import 'package:mechat/Pages/Auth/AuthPage.dart';
 import 'package:mechat/Pages/Chat/ChatPage.dart';
 import 'package:mechat/Pages/Home/HomePage.dart';
-import 'package:mechat/Pages/Profile/ProfilePage.dart';
-import 'package:mechat/Pages/Profile/UpdateProfile.dart';
+import 'package:mechat/Pages/UserProfile/ProfilePage.dart';
+import 'package:mechat/Pages/UserProfile/UpdateProfile.dart';
 
 var pagePath = [
   GetPage(
@@ -21,14 +21,14 @@ var pagePath = [
     page: () => const ChatPage(),
     transition: Transition.leftToRight,
   ),
-  GetPage(
-    name: "/profilePage",
-    page: () => const ProfilePage(),
-    transition: Transition.leftToRight,
-  ),
-  GetPage(
-    name: "/updateProfilePage",
-    page: () => const UpdateProfile(),
-    transition: Transition.leftToRight,
-  ),
+  // GetPage(
+  //   name: "/profilePage",
+  //   page: () => const UserProfilePage(),
+  //   transition: Transition.leftToRight,
+  // ),
+  // GetPage(
+  //   name: "/updateProfilePage",
+  //   page: () => const UserUpdateProfile(),
+  //   transition: Transition.leftToRight,
+  // ),
 ];
