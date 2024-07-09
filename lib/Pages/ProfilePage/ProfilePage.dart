@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechat/Config/imges.dart';
+import 'package:mechat/Controller/ImagePicker.dart';
 import 'package:mechat/Controller/ProfileController.dart';
 import 'package:mechat/Widget/PrimatyButton.dart';
 
@@ -20,6 +23,9 @@ class ProfilePage extends StatelessWidget {
         text: profileController.currentUser.value.phoneNumber);
     TextEditingController about =
         TextEditingController(text: profileController.currentUser.value.about);
+    ImagePickerController imagePickerController =
+        Get.put(ImagePickerController());
+    RxString imagePath = "".obs;
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -46,12 +52,33 @@ class ProfilePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            CircleAvatar(
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.background,
-                              radius: 80,
-                              child: Icon(Icons.image),
-                            ),
+                            Obx(() => isEdit.value
+                                ? InkWell(
+                                    onTap: () async {
+                                      imagePath.value =
+                                          await imagePickerController
+                                              .pickImage();
+                                      print("Image Picked" + imagePath.value);
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundColor: Theme.of(context)
+                                          .colorScheme
+                                          .background,
+                                      radius: 80,
+                                      child: imagePath.value == ""
+                                          ? Icon(Icons.add)
+                                          : Image.file(
+                                              File(imagePath.value),
+                                            ),
+                                    ),
+                                  )
+                                : CircleAvatar(
+                                    backgroundColor: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                    radius: 80,
+                                    child: Icon(Icons.image),
+                                  )),
                           ],
                         ),
                         SizedBox(

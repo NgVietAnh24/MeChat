@@ -6,7 +6,6 @@ import 'package:mechat/Model/UserModel.dart';
 class ProfileController extends GetxController {
   final auth = FirebaseAuth.instance;
   final db = FirebaseFirestore.instance;
-
   Rx<UserModel> currentUser = UserModel().obs;
 
   void onInit() async {
