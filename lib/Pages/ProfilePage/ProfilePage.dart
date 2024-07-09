@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RxBool isEdit = false.obs;
+    RxBool isEdit = true.obs;
     ProfileController profileController = Get.put(ProfileController());
     TextEditingController name =
         TextEditingController(text: profileController.currentUser.value.name);
@@ -25,7 +25,9 @@ class ProfilePage extends StatelessWidget {
         TextEditingController(text: profileController.currentUser.value.about);
     ImagePickerController imagePickerController =
         Get.put(ImagePickerController());
-    RxString imagePath = "".obs;
+    RxString imagePath =
+        "/data/user/0/vn.vanh.message.mechat/cache/8e007e7a-3c93-4bf3-8931-fc202f12de36/1000002910.jpg"
+            .obs;
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -60,15 +62,27 @@ class ProfilePage extends StatelessWidget {
                                               .pickImage();
                                       print("Image Picked" + imagePath.value);
                                     },
-                                    child: CircleAvatar(
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .background,
-                                      radius: 80,
+                                    child: Container(
+                                      height: 200,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .background,
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                      ),
                                       child: imagePath.value == ""
-                                          ? Icon(Icons.add)
-                                          : Image.file(
-                                              File(imagePath.value),
+                                          ? Icon(
+                                              Icons.add,
+                                            )
+                                          : ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                              child: Image.file(
+                                                File(imagePath.value),
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                     ),
                                   )
