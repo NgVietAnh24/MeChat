@@ -1,11 +1,18 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:mechat/Model/UserModel.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class ProfileController extends GetxController {
   final auth = FirebaseAuth.instance;
   final db = FirebaseFirestore.instance;
+  final store = FirebaseStorage.instance;
+  RxBool isLoading = false.obs;
   Rx<UserModel> currentUser = UserModel().obs;
 
   void onInit() async {
@@ -21,5 +28,47 @@ class ProfileController extends GetxController {
             ),
           },
         );
+  }
+
+  Future<void> updateProfile(
+    String imageUrl,
+    String name,
+    String about,
+    String number,
+  ) async {
+    isLoading.value = true;
+    try {
+      final imageLink = await uploadFileToFirebase(imageUrl);
+      final updateUser = UserModel(
+        name: name,
+        about: about,
+        profileImage: imageLink,
+        phoneNumber: number,
+      );
+      await db.collection("users").doc(auth.currentUser!.uid).set(
+            updateUser.toJson(),
+          );
+    } catch (ex) {
+      print(ex);
+    }
+    isLoading.value = false;
+  }
+
+  Future<String> uploadFileToFirebase(String imagePath) async {
+    final path = "file/${imagePath}";
+    final file = File(imagePath!);
+    if (imagePath != "") {
+      try {
+        final ref = store.ref().child(path).putFile(file);
+        final uploadTask = await ref.whenComplete(() {});
+        final downloadImageUrl = await uploadTask.ref.getDownloadURL();
+        print(downloadImageUrl);
+        return downloadImageUrl;
+      } catch (ex) {
+        print(ex);
+        return "";
+      }
+    }
+    return "";
   }
 }
