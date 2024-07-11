@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mechat/Config/imges.dart';
+import 'package:mechat/Controller/AuthController.dart';
 import 'package:mechat/Controller/ImagePicker.dart';
 import 'package:mechat/Controller/ProfileController.dart';
 import 'package:mechat/Widget/PrimatyButton.dart';
@@ -26,9 +27,21 @@ class ProfilePage extends StatelessWidget {
     ImagePickerController imagePickerController =
         Get.put(ImagePickerController());
     RxString imagePath = "".obs;
+
+    AuthController authController = Get.put(AuthController());
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              authController.logoutUser();
+            },
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -96,8 +109,11 @@ class ProfilePage extends StatelessWidget {
                                             BorderRadius.circular(100),
                                       ),
                                       child: profileController.currentUser.value
-                                                  .profileImage ==
-                                              ""
+                                                      .profileImage ==
+                                                  "" ||
+                                              profileController.currentUser
+                                                      .value.profileImage ==
+                                                  null
                                           ? Icon(
                                               Icons.image,
                                             )
